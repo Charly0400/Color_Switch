@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Panel_Scropt : MonoBehaviour
 {
@@ -12,7 +13,6 @@ public class Panel_Scropt : MonoBehaviour
     public void ClosePanel()
     {
         GetComponent<Animator>().SetTrigger("Close");
-
     }
 
     public void SetTimePlay()
@@ -41,16 +41,16 @@ public class Panel_Scropt : MonoBehaviour
     {
         GetComponent<Animator>().SetTrigger("OpenGameOver");
     }
-
-
-
-
-
     public void Salir()
     {
         Application.Quit();
         UnityEditor.EditorApplication.isPlaying = false;
         Debug.Log("Salir");
+    }
+    public void Restart()
+    {
+        //Función que reseteé todo a su lugar
+        SceneManager.LoadScene(0);
     }
 
 }

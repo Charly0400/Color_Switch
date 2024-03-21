@@ -22,7 +22,7 @@ public class SpawnObstacle : MonoBehaviour
         }
     }
 
-    void Spawn(Transform spawnTransform)
+    public void Spawn(Transform spawnTransform)
     {
         int randomIndex = Random.Range(0, obstaclePrefabs.Length); 
         GameObject newObstacle = Instantiate(obstaclePrefabs[randomIndex], spawnTransform.position, Quaternion.identity);

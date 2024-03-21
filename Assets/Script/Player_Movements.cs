@@ -4,11 +4,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(Rigidbody))]
 public class Player_Movements : MonoBehaviour
 {
     private Player_Inputs inputs;
     public Rigidbody2D rb;
     public SpriteRenderer sr;
+    public GameObject gameOverPanel;
+
 
     [SerializeField] private float jumpForce = 10f;
 
@@ -53,7 +56,8 @@ public class Player_Movements : MonoBehaviour
         if (other.tag != currentColor)
         {
             Debug.Log("GAME OVER!");
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            Time.timeScale = 0;
+            gameOverPanel.SetActive(true);
         }
     }
 

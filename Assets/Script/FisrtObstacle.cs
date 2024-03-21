@@ -15,8 +15,6 @@ public class FisrtObstacle : MonoBehaviour
                 spawnObstacle.FirstObstacleTouched();
             }
 
-            // Destruir este objeto después de ser tocado
-            Destroy(gameObject);
         }
     }
 }
