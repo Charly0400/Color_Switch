@@ -8,13 +8,12 @@ public class FisrtObstacle : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            // Obtener la referencia al script SpawnObstacle y llamar al método FirstObstacleTouched
+            // Obtener la referencia al script SpawnObstacle y llamar al m?todo FirstObstacleTouched
             SpawnObstacle spawnObstacle = FindObjectOfType<SpawnObstacle>();
             if (spawnObstacle != null)
             {
                 spawnObstacle.FirstObstacleTouched();
             }
-
         }
     }
 }
