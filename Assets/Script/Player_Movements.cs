@@ -41,16 +41,16 @@ public class Player_Movements : MonoBehaviour
         rb.velocity = Vector2.up * jumpForce;
     }
 
-    void OnTriggerEnter2D(Collider2D col)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if (col.CompareTag("ColorChanger"))
+        if (other.CompareTag("ColorChanger"))
         {
             SetRandomColor();
-            Destroy(col.gameObject);
+            Destroy(other.gameObject);
             return;
         }
 
-        if (col.tag != currentColor)
+        if (other.tag != currentColor)
         {
             Debug.Log("GAME OVER!");
             //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
